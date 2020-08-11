@@ -1,0 +1,76 @@
+@import "mixins";
+// @import "variables";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(132, 255, 231);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 255, 231, 0.7702790588891807) 35%,
+    rgba(0, 214, 255, 0.9859653333989846) 100%
+  );
+}
+.clock {
+  @include clock-size;
+  position: relative;
+  background-color: rgb(255, 255, 255, 0.75);
+  .number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0.2rem;
+    font-size: 1.2rem;
+  }
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    border-radius: 5px;
+  }
+  .hand-second {
+    background-color: red;
+    @include hand-second-size;
+    z-index: 5;
+  }
+  .hand-minute {
+    background-color: black;
+    @include hand-minute-size;
+    z-index: 4;
+  }
+  .hand-hour {
+    background-color: black;
+    @include hand-hour-size;
+    z-index: 3;
+  }
+  .hand-base {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: black;
+    z-index: 6;
+  }
+}
+
+@for $i from 1 through 12 {
+  .number-#{$i} {
+    transform: rotate(30deg * $i);
+  }
+}

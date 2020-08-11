@@ -1,0 +1,67 @@
+@import "variables";
+
+@mixin clock-size {
+  @media (min-width: 1px) {
+    min-width: $clock-width * 0.5;
+    height: $clock-width * 0.5;
+    border-radius: $clock-width * 0.5;
+    border: 2px solid black;
+  }
+  @media (min-width: 500px) {
+    min-width: $clock-width * 0.75;
+    height: $clock-width * 0.75;
+    border-radius: $clock-width * 0.75;
+    border: 4px solid black;
+  }
+  @media (min-width: 700px) {
+    min-width: $clock-width * 1;
+    height: $clock-width * 1;
+    border-radius: $clock-width * 1;
+    border: 5px solid black;
+  }
+}
+
+@mixin hand-second-size {
+  @media (min-width: 1px) {
+    width: $hand-width * 0.3;
+    height: $hand-height * 0.5;
+  }
+  @media (min-width: 500px) {
+    width: $hand-width * 0.5;
+    height: $hand-height * 0.85;
+  }
+  @media (min-width: 700px) {
+    width: $hand-width * 0.7;
+    height: $hand-height * 1.2;
+  }
+}
+
+@mixin hand-minute-size {
+  @media (min-width: 1px) {
+    width: $hand-width * 0.4;
+    height: $hand-height * 0.5;
+  }
+  @media (min-width: 500px) {
+    width: $hand-width * 0.6;
+    height: $hand-height * 0.75;
+  }
+  @media (min-width: 700px) {
+    width: $hand-width * 0.8;
+    height: $hand-height * 1.1;
+  }
+}
+
+@mixin hand-hour-size {
+  @media (min-width: 1px) {
+    width: $hand-width * 0.5;
+    height: $hand-height * 0.35;
+  }
+  @media (min-width: 500px) {
+    width: $hand-width * 0.7;
+    height: $hand-height * 0.6;
+  }
+  @media (min-width: 700px) {
+    width: $hand-width * 0.9;
+    height: $hand-height * 0.9;
+  }
+}
